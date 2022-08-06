@@ -26,6 +26,15 @@ public class Controls : MonoBehaviour {
         this.aimDir = aimInput.Get<Vector2>().normalized;
     }
 
+    void OnTeleport() {
+        Vector3 start = this.rb.position;
+        Vector3 target = this.rb.transform.forward * 5 + start;
+        Vector3 finish = new Vector3(target.x, 2, target.z);
+        Debug.Log("target : " + finish);
+        this.rb.transform.position = target;
+        Debug.Log("position : " + this.rb.position);
+    }
+
     // Update is called once per frame
     void FixedUpdate() {
         Vector3 playerMovement = new Vector3(movDir.x, 0, movDir.y);

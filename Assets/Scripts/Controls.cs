@@ -43,12 +43,12 @@ public class Controls : MonoBehaviour {
         Vector3 playerAim = new Vector3(aimDir.x, 0, aimDir.y);
         if (playerAim.magnitude > 0) {
             Quaternion rotation = Quaternion.LookRotation(playerAim);
-            rotation = Quaternion.RotateTowards(rb.rotation, rotation, 480 * Time.deltaTime);
+            rotation = Quaternion.RotateTowards(rb.rotation, rotation, 720 * Time.deltaTime);
             this.rb.MoveRotation(rotation); 
         } 
         if (playerMovement.magnitude > 0) {
             Quaternion rotation = Quaternion.LookRotation(playerMovement);
-            rotation = Quaternion.RotateTowards(rb.rotation, rotation, 480 * Time.deltaTime);
+            rotation = Quaternion.RotateTowards(rb.rotation, rotation, 720 * Time.deltaTime);
             this.rb.MoveRotation(rotation);
         }
     }
